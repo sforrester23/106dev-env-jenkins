@@ -63,6 +63,8 @@ Again, you might have to connect your account using the auth key method (think I
 
 Check that ngrok works in your terminal with ngrok -h, if it doesn't there might be some problem with the installation?
 
+NOTE: THIS PROCESS CAN BE FULLY AUTOMATED USING PROVISIONING! It can be a bit sticky though. But in theory, you can have steps 1-6 done automatically when you vagrant up.
+
 7. Now we have jenkins running with everything we need (nginx, java, nodejs and particularly ngrok - which allows us to open a local port to the wider internet).
 
 Go to the local jenkins port (probably development.local:8080, or whatever you named it in your vagrant file), and it'll ask for a password. You can get this password by entering into your terminal
