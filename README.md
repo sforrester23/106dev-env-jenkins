@@ -65,7 +65,7 @@ Check that ngrok works in your terminal with ngrok -h, if it doesn't there might
 
 NOTE: THIS PROCESS CAN BE FULLY AUTOMATED USING PROVISIONING! It can be a bit sticky though. But in theory, you can have steps 1-6 done automatically when you vagrant up.
 
-7. Now we have jenkins running with everything we need (nginx, java, nodejs and particularly ngrok - which allows us to open a local port to the wider internet).
+8. Now we have jenkins running with everything we need (nginx, java, nodejs and particularly ngrok - which allows us to open a local port to the wider internet).
 
 Go to the local jenkins port (probably development.local:8080, or whatever you named it in your vagrant file), and it'll ask for a password. You can get this password by entering into your terminal
 
@@ -73,7 +73,7 @@ Go to the local jenkins port (probably development.local:8080, or whatever you n
 
 which will return the password required to gain acces to jenkins. Set up your user as usual and proceed.
 
-8. We can now proceed to try and set up the link between your virtual machine, GitHub and Jenkins.
+9. We can now proceed to try and set up the link between your virtual machine, GitHub and Jenkins.
 
 With ngrok now able to run, we can open a tunnel to the port where jenkins is set up. In your ssh terminal, do this with the command:
 
@@ -90,7 +90,7 @@ This window will also provide you with updates of whenever something is sent thr
 
 IMPORTANT: DO NOT LEAVE THIS WINDOW, ALWAYS HAVE YOUR BASH WINDOW OPEN ON IT. IF YOU LEAVE IT, THE CONNECTION FROM YOUR LOCAL DOMAIN TO THE WIDER WEB WILL BE LOST AND YOU WILL HAVE TO RE-ENTER IT. If you do leave this window and have to re-enter, you will have to change settings in both Jenkins and Github Webhooks to reflect the change in key. Not advised.
 
-9. Now, go to your GitHub repository that you'd like to connect to Jenkins and head to settings (top right ish). Then, head to webhooks section from the left side menu. We're going to want to add a new webhook, and then add the URL as whatever is displayed back in your ngrok terminal from part 8. Then, before exiting, add /github-webhook/. The final product should look something like:
+10. Now, go to your GitHub repository that you'd like to connect to Jenkins and head to settings (top right ish). Then, head to webhooks section from the left side menu. We're going to want to add a new webhook, and then add the URL as whatever is displayed back in your ngrok terminal from part 8. Then, before exiting, add /github-webhook/. The final product should look something like:
 
         http://[random_key].eu.ngrok.io/github-webhook/
 
@@ -101,11 +101,11 @@ Ideally, it has a nice green tick next to it also. But that might not be the cas
 Ideally, something like this, bar the change in ssh key:
 ![webhook-setup](https://miro.medium.com/max/674/1*LBgybSiwTY-umPSJ7fvDBA.png)
 
-10. Next up, we need to play around with some Jenkins settings.
+11. Next up, we need to play around with some Jenkins settings.
 
 Go into Jenkins on the browser, head to Manage Jenkins, then to Manage Plugins. We're going to want to install the GitHub Pull Request Builder, and the GitHub interaction plugin.
 
-11. Now these are installed (you may have to restart Jenkins), we can go to Manage Jenkins, then Configure System.
+12. Now these are installed (you may have to restart Jenkins), we can go to Manage Jenkins, then Configure System.
 
 Here, scroll down to GitHub Pull Requests, and copy the link of your connected repository into the Published Jenkins URL section.
 
