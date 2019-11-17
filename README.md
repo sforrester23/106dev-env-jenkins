@@ -55,6 +55,8 @@ You'll have to make an account with ngrok (recommend linking with github), and g
 
 ![ngrok.install](https://miro.medium.com/max/835/1*l7XNHpi0hDEYhnv301zmzQ.png)
 
+But don't open the port on 80!
+
 Then once you've done this, go back to your vagrant ssh window and install it there:
 
         sudo npm i -g ngrok --unsafe-perm=true --allow-root
@@ -126,3 +128,5 @@ is checked off. This means that this job will execute every time a commmit is ma
 This is where, theoretically, we could add steps to do builds on jenkins, like execute a shell. No need to play around with this yet.
 
 Click Build now to execute the build. The first instance will carry out a build, but the only way to test this is to try and do a commit and push on your bash terminal.
+
+# Testing GitHub connection
