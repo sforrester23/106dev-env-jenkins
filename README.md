@@ -128,5 +128,3 @@ is checked off. This means that this job will execute every time a commmit is ma
 This is where, theoretically, we could add steps to do builds on jenkins, like execute a shell. No need to play around with this yet.
 
 Click Build now to execute the build. The first instance will carry out a build, but the only way to test this is to try and do a commit and push on your bash terminal.
-
-# Testing GitHub connection
